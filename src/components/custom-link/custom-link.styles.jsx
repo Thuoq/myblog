@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 const buttonHeading = css`
@@ -20,7 +21,7 @@ const getButtonStyles = (props) => {
 
 
 
-const buttonLabel = styled(Link)`
+export const ButtonLabel = styled(Link)`
 	transition: all 0.2s ease-in-out;
 	&,&:link,&:active{
 		text-decoration: none;
