@@ -7,7 +7,7 @@ const buttonHeading = css`
 		font-weight: 500;
 `
 const buttonReading = css`
-		font-size: 1.6rem;
+		font-size: 1.9rem;
 		color: #FFA902;
 		font-family: sans-serif;
 `
