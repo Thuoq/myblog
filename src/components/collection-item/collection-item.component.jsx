@@ -13,7 +13,7 @@ const CollectionItem = ({collection}) => {
 	const {imageUrl,title,author,date,description,routeName} = collection;
 	return(
 		<CategoryContainer className ="mb-md">
-			 <img src={imageUrl} />
+			 <img src={imageUrl} alt="#IMAGE_COLLECIONS"/>
 				<div>
 					<CategoryContentContainer className="mb-sm">
 						<h2>

@@ -20,7 +20,7 @@ const Navigation = () =>  {
 						</LinkItemContainer>
 					</ListItemContaner>
 					<ListItemContaner>
-						<LinkItemContainer   to="/login">
+						<LinkItemContainer   to="/signin">
 							Login
 						</LinkItemContainer>
 					</ListItemContaner>

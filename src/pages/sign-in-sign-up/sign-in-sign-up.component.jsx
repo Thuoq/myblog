@@ -1,9 +1,15 @@
 import React from 'react';
 
-
-const SignInSignUpPage = ()=> {
+import SignUp from '../../components/sign-up/sign-up.component';
+import SignIn from '../../components/sign-in/sign-in.component';
+import {SignInSignUpContainer} from './sign-in-sign-up.styles';
+const SignInSignUpPage = () => {
 	return(
-		<div> Hello</div>
+		<SignInSignUpContainer> 
+			
+			<SignIn/>
+			<SignUp/>
+		</SignInSignUpContainer>
 	)
 }
 export default SignInSignUpPage;

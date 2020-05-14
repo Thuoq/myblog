@@ -85,6 +85,10 @@ body{
 		color: #FFA902;
 	}
 }
+.letter-spacing{
+    letter-spacing: 1.2rem
+}
+
 .paragraph{
 	color: white;  
 	font-size: 1.6rem;
