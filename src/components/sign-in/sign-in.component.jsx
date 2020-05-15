@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomLink from '../custom-link/custom-link.component';
+import FormInput from '../form-input/form-input.component';
 class SignIn extends React.Component {
 	constructor(props) {
 		super(props);
@@ -26,19 +27,20 @@ class SignIn extends React.Component {
 			<div className="d-left">
 				<h2 className="mb-md">Do You Have Account ?</h2>
 				<form action="#"  onSubmit={this.handelSubmit}>
-					<input 
+					<FormInput 
 						placeholder="Your Email:" 
 						type="email"
 						name = "email"
 						value = {email}
 						onChange = {this.handleOnChange}
-						  />
-					<input
+						required />
+					<FormInput
 					 	type="password"  
 						placeholder="Your Password:" 
 						name ="password"
 						value = {password}
-						onChange = {this.handleOnChange}/> 
+						onChange = {this.handleOnChange}
+						required/> 
 					<div>
 						<CustomLink 
 							as="button" 
