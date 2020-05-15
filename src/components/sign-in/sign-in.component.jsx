@@ -8,16 +8,46 @@ class SignIn extends React.Component {
 			password: ""
 		}
 	}
+	handleOnChange = (e) => {
+		e.preventDefault();
+		const {name , value} = e.target
+		this.setState({[name] : value})
+	}
+	handelSubmit = e => {
+		e.preventDefault();
+		const { email , password} = this.state;
+		console.log(email , password)
+	}
+	
+	
 	render() {
+		const {email, password } = this.state;
 		return (
 			<div className="d-left">
 				<h2 className="mb-md">Do You Have Account ?</h2>
-				<form action="#" >
-					<input className ="d-left__input" placeholder="Your Email:" id="emailsignin1" type="email"  />
-					<input id="passwordsignin1" type="password"  placeholder="Your Password:" /> 
+				<form action="#"  onSubmit={this.handelSubmit}>
+					<input 
+						placeholder="Your Email:" 
+						type="email"
+						name = "email"
+						value = {email}
+						onChange = {this.handleOnChange}
+						  />
+					<input
+					 	type="password"  
+						placeholder="Your Password:" 
+						name ="password"
+						value = {password}
+						onChange = {this.handleOnChange}/> 
 					<div>
-						<CustomLink as="button" type="submit" signIn="true">Sign In</CustomLink>
-						<CustomLink  as="button" type="submit" signInWithGoogle="true" >Sign In With Google</CustomLink>
+						<CustomLink 
+							as="button" 
+							type="submit" 
+							signIn="true">Sign In</CustomLink>
+						<CustomLink  
+							as="button" 
+							type="submit" 
+							signInWithGoogle="true" >Sign In With Google</CustomLink>
 					</div>
 				</form>
 			</div>

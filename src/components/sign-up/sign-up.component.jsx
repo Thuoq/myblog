@@ -10,19 +10,56 @@ class SignUp extends React.Component {
 			confirmPassword: ""
 		}
 	}
+
+	handleChange = e =>  {
+		e.preventDefault(); 
+		const {name , value } = e.target;
+		this.setState({[name] : value})
+	}
+
+	handleSubmit  = e => {
+		e.preventDefault();
+		const { email , password , displayName , confirmPassword } = this.state;
+
+		if(confirmPassword !== password) {
+			return ; 
+		}
+		console.log(email , password , displayName , confirmPassword , "this here" )
+	}
 	render() {
+		const {email ,  password , displayName , confirmPassword } = this.state;
 		return (
 			<div className="d-right">
 				<h2 className="mb-md">Do You Not Have Account ? </h2>
-				<form action="" className="d-right__form">
+				<form action="" className="d-right__form" onSubmit = {this.handleSubmit}>
 					
-					<input type="email" id="emailsignup1" placeholder="Your email:" /> 
+					<input type="email"  	
+						   placeholder="Your email:"
+						   value={email}
+						   name ="email" 
+						   onChange={this.handleChange}
+					/> 
+
+					<input type="text" 
+						   placeholder="Display name:"
+						   name="displayName"	
+						   value = {displayName}
+						   onChange={this.handleChange}
+					/>
 					
-					<input type="text" id="displaynamesignup1" placeholder="Display name:"/>
-					
-					<input type="password" id="passwordsignup1" placeholder="Your password:"/> 
+					<input type="password" 
+						   placeholder="Your password:"
+						   name= "password"
+						   value = {password}
+						   onChange = {this.handleChange}
+					/> 
 	
-					<input type="password" id="passwordsignup2" placeholder="Confirm Password:"/> 
+					<input type="password" 
+						   placeholder="Confirm Password:"
+						   name= "confirmPassword" 
+						   value = {confirmPassword}
+						   onChange= {this.handleChange}
+					 /> 
 					<CustomLink as="button" type="submit" signIn="true">Sign Up</CustomLink>
 				</form>
 			</div>
